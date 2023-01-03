@@ -8,8 +8,8 @@ object implicits {
     type CustomErrorWithMessage = String :: HNil
 
     def errorTo[E <: CustomError](implicit
-        gen: Lazy[Generic.Aux[E, CustomErrorWithCause]]
+        gen: Generic.Aux[E, CustomErrorWithCause]
     ): E =
-      gen.value.from(throwable.getMessage :: throwable.getCause :: HNil)
+      gen.from(throwable.getMessage :: throwable.getCause :: HNil)
   }
 }

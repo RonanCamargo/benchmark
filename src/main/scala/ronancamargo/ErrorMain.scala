@@ -8,7 +8,7 @@ import error.implicits._
 import error.MyError
 
 @State(Scope.Thread)
-class Main {
+class ErrorMain {
 
   val someError = new RuntimeException("RIP")
 
